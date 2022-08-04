@@ -1,0 +1,8 @@
+content-type:arduino-ocpp_configuration_file
+version:1.0
+configurations_len:10
+"configurations":
+{
+    "ChargeProfileMaxStackLevel":"10"
+    "GetConfigurationMaxKeys":"1"
+}

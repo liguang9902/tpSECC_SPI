@@ -1,0 +1,14 @@
+{
+    "chargingProfileId":"0" ,
+    "transactionId":"100" ,
+    "stackLevel":"0" ,
+    "chargingProfilePurpose":"ChargePointMaxProfile" ,
+    "chargingProfileKind":"Absolute" ,
+    "recurrencyKind":"Weekly" ,
+    "validFrom":"2021-11-14T00:00:01" ,
+    "validTo":"2022-11-13T23:59:59" ,
+    "duration":"10" ,
+    "startSchedule":"2021-11-01T00:00:00" ,
+    "schedulingUnit":"W" ,
+    "minChargingRate":"1.00" 
+}

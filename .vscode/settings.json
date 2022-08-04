@@ -1,0 +1,11 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "workbench.editor.enablePreview": false,
+    "files.associations": {
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "*.tpp": "cpp"
+    },
+}
