@@ -33,7 +33,7 @@ class EVSE_Interfacer
 {
 private:
     SPIClass *pCommUart;
-    size_t evseif_SendBuffer(const uint8_t *txBuffer, uint8_t length);
+    size_t evseif_SendBuffer(const uint8_t *txBuffer, size_t length);
     size_t evseif_RecvBuffer_sync(uint8_t *rxBuffer, size_t maxReceive, uint32_t timeout=EVSE_RESPONSE_TIMEOUT);
 
 protected:

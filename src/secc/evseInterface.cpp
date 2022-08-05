@@ -25,11 +25,11 @@ EVSE_Interfacer::~EVSE_Interfacer()
 {
 }
 
-size_t EVSE_Interfacer::evseif_SendBuffer(const uint8_t *txBuffer, uint8_t length)
+size_t EVSE_Interfacer::evseif_SendBuffer(const uint8_t *txBuffer, size_t length)
 {
   //111
-  spi_device_handle_t spi;
-  this->pCommUart->writePixels(txBuffer,length);
+  //spi_device_handle_t spi;
+  this->pCommUart->SPIString(txBuffer,length);
   this->pCommUart->flush();
   return length;
 }

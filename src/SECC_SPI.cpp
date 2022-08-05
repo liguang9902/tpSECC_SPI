@@ -1,6 +1,8 @@
 #include "SECC_SPI.hpp"
 #include "esp32-hal-spi.h"
 #include "driver\spi_master.h"
+#include "string.h"
+#include "Arduino.h"
 
 SPIClass::SPIClass(uint8_t spi_bus)
     :_spi_num(spi_bus)
@@ -309,4 +311,26 @@ esp_err_t SPIClass::spi_write(spi_device_handle_t spi, uint8_t *data, uint8_t le
     return ret;
 }
 
+
+void SPIClass::SPIString(const uint8_t *data,size_t length){
+    static const int spiClk = 40000000;
+this->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
+  digitalWrite(PIN_NUM_CS, LOW); //pull SS slow to prep other end for transfer
+  
+  /*char c;
+  for (const char *da=data.c_str();c=*da;da++){
+    spi->transfer(c);
+  }*/
+  for (size_t i = 0; i < (length+1); i++)
+  {
+    this->transfer(*data);
+    *data++;
+  }
+  
+  
+  
+  digitalWrite(PIN_NUM_CS, HIGH); //pull ss high to signify end of data transfer
+  this->endTransaction();
+
+}
 SPIClass SPI(VSPI);

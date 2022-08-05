@@ -6,7 +6,7 @@
 #include "esp32-hal-spi.h"
 #include "Stream.h"
 #include "driver\spi_master.h"
-
+#include "string.h"
 #define SPI_HAS_TRANSACTION
 
 class SPISettings
@@ -73,6 +73,7 @@ public:
     //void flush( bool txOnly);
     //size_t write(uint8_t);
     //size_t write(const uint8_t *buffer, size_t size);
+    void  SPIString(const uint8_t *data,size_t length);
 
     esp_err_t spi_write(spi_device_handle_t spi, uint8_t *data, uint8_t  len);
 
